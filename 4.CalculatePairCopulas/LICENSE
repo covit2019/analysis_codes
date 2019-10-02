@@ -1,0 +1,17 @@
+This packages using the copies of following two libraries
+1.) vinecopulib
+  Author     : Thomas Nagler and Thibault Vatter
+  License    : The MIT License
+  Repository : https://github.com/vinecopulib/vinecopulib.git
+2.) wdm
+  Author     : Thomas Nagler
+  License    : The MIT License
+  Repositpry : https://github.com/tnagler/wdm.git
+
+These packages are licensed under the terms of the MIT license. So if you want to copy, 
+see the LICENSE file in the root directory of 
+ https://vinecopulib.github.io/vinecopulib/
+and
+ https://vinecopulib.github.io/tragler/wdm
+
+
