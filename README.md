@@ -7,7 +7,7 @@
   - [Environment](#environment)
 - [How to run the programs](#how-to-run-the-programs)
   - [<u>1. Train a neural network</u>](#u1-train-a-neural-networku)
-  - [<u>2. Create PDF and CDF distributions for each node in the trained neural network.</u>](#u2-create-pdf-and-cdf-distributions-for-each-node-in-the-trained-neural-networku)
+  - [<u>2. Create PDF and CDF distributions for each node in the trained neural network</u>](#u2-create-pdf-and-cdf-distributions-for-each-node-in-the-trained-neural-networku)
     - [Create PDF/CDF distributions (Fill the histograms)](#create-pdfcdf-distributions-fill-the-histograms)
     - [Create figures](#create-figures)
   - [<u>3. Prepare the input files to calculate copulas</u>](#u3-prepare-the-input-files-to-calculate-copulasu)
@@ -18,8 +18,8 @@
 
 # About this package
 This package contains source codes for the experiment using Copula-based Visualization Techniques.
-The source codes and its results are included.
-The some programs are written in C++, so you need to compile it with your environments. 
+The source codes and their results are included.
+Some programs are written in C++, so you need to compile it with your environments. 
 Details are explained in *4.CalculatePairCopulas/README.md*.
 
 # Overview of experiment procedures
@@ -34,10 +34,10 @@ Only you need to do is run the scripts/executable sequentially from
 
 + 1.ModelingNN  
 
-Before running the script written in python, you have to install some dependent packages(numpy, pandas, matplot, tensorflow,...) via pip command.
-Note that the version tensorflow used in this analysis is 2.0.0-beta, not a version 1.X.
+Before running the script written in Python, you have to install some dependent packages (numpy, Pandas, matplot, TensorFlow, etc.) via pip command.
+Note that the version TensorFlow used in this analysis is 2.0.0-beta, not a version 1.X.
 You also need ROOT ( https://root.cern.ch/ ) which is a scientific software toolkit developed at CERN.
-Although you can not install ROOT via pip command, but you can install it easily via conda command if you are using anaconda as python environment.
+Although you can not install ROOT via pip command, you can install it easily via conda command if you are using Anaconda as Python environment.
 See https://github.com/conda-forge/root-feedstock/ for more details about installing ROOT.
 
 + 00.DotFilesToCreateFigures
@@ -46,7 +46,7 @@ contains scripts for GraphViz to make some figures such as graph structure of a 
 
 ## Environment
 The author using these analysis codes with the following environment
-+ python 3.7 created with anaconda as python environment
++ Python 3.7 created with Anaconda
 + g++ 7.4 as C++ compiler
 
 
@@ -61,10 +61,10 @@ Then the bellow files will be created.
 + iris_nn_model.png : Summary of the neural network model
 + train.log : log of training for each epoch
 + learning_curve.png : learning curve
-+ iris_nn_outputs.csv : input features and the output of activation functions for each node of hidden layers and prediction results in the neural netwrok for each sample.
++ iris_nn_outputs.csv : input features and the output of activation functions for each node of hidden layers and prediction results in the neural network for each sample.
 
 
-## <u>2. Create PDF and CDF distributions for each node in the trained neural network.</u>  
+## <u>2. Create PDF and CDF distributions for each node in the trained neural network</u>  
 ### 2.1 Create PDF/CDF distributions (Fill the histograms)
 Due to the number of samples is not large, we handle PDF and CDF distributions as histograms in this analysis.
 To make the PDF and CDF distributions, type the following commands in your terminal
@@ -90,7 +90,7 @@ Note that the script assumes that the directory with name *fig* exists in the wo
 
 ## <u>3. Prepare the input files to calculate copulas</u>  
 In this step, we calculate the CDF value for all nodes in the neural network for each sample. 
-To run the script, you need following files in the *3.CreateInputForvineCopulib* directory
+To run the script, you need the following files in the *3.CreateInputForvineCopulib* directory
 + iris_nn_ouputs.csv
 + dist_all.root
 + dist_y_0.root
@@ -111,8 +111,8 @@ will be created. This csv file includes the value of CDF value for each node of 
 In this step, the program estimates pair-copulas for each node in the neural network. Then, we consider Kendall's tau for each pair-copulas as the coefficient correlation.
 To estimate the copula, we use the noble C++ library [vinecopulib](https://github.com/vinecopulib/vinecopulib). 
 
-Before running the program, you need to compile the source codes.
-which depend on Boost and Eigen.
+Before running the program, you need to compile the source codes
+which depends on Boost and Eigen.
 If you need more details, please read  
 *4.CalculatePairCopulas/README.md*
 
