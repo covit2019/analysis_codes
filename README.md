@@ -7,12 +7,12 @@
   - [environment](#environment)
 - [How to run the programms](#how-to-run-the-programms)
   - [<u>1. Train a neural network</u>](#u1-train-a-neural-networku)
-  - [<u>2.Create PDF and CDF distribution for each node in the trained neural network.</u>](#u2create-pdf-and-cdf-distribution-for-each-node-in-the-trained-neural-networku)
+  - [<u>2. Create PDF and CDF distribution for each node in the trained neural network.</u>](#u2-create-pdf-and-cdf-distribution-for-each-node-in-the-trained-neural-networku)
     - [Create PDF/CDF ditributions (Fill the histograms)](#create-pdfcdf-ditributions-fill-the-histograms)
     - [Create figures](#create-figures)
-  - [<u>3 3. Prepare the input files to calculate copulas</u>](#u3-3-prepare-the-input-files-to-calculate-copulasu)
-  - [<u>Estimate copulas and dump coeeficient correlation matrix</u>](#uestimate-copulas-and-dump-coeeficient-correlation-matrixu)
-  - [<u>5.Analyzie the correlation matrix</u>](#u5analyzie-the-correlation-matrixu)
+  - [<u>3. Prepare the input files to calculate copulas</u>](#u3-prepare-the-input-files-to-calculate-copulasu)
+  - [<u>4. Estimate copulas and dump coeeficient correlation matrix</u>](#u4-estimate-copulas-and-dump-coeeficient-correlation-matrixu)
+  - [<u>5. Analyzie the correlation matrix</u>](#u5-analyzie-the-correlation-matrixu)
 
 <!-- /TOC -->
 
@@ -64,7 +64,7 @@ Then the bellow files will be created.
 + iris_nn_outputs.csv : input features and the output of activation functions for each node of hidden leayers and prediction results in the neural netwrok for each samples.
 
 
-## <u>2.Create PDF and CDF distribution for each node in the trained neural network.</u>  
+## <u>2. Create PDF and CDF distribution for each node in the trained neural network.</u>  
 ### 2.1 Create PDF/CDF ditributions (Fill the histograms)
 Due to the number of samples is not large, we handle PDF and CDF distributions as histograms in this analysis.
 To make the PDF and CDF distributions, type the following commands in your terminal
@@ -88,7 +88,7 @@ To create figures from histograms in the root files. Just type
 What this script is just visualizing the histograms. So this process is not necessaly, just exists for validation.
 Note that the script assume that the directory with name *fig* exist in the working directory. 
 
-## <u>3 3. Prepare the input files to calculate copulas</u>  
+## <u>3. Prepare the input files to calculate copulas</u>  
 What is actually doing in this process is just calculate the CDF value for all nodes in the neural network for each samples. 
 To run the script, first, copy the following files created in the previous steps into the *3.CreateInputForvineCopulib* directory
 + iris_nn_ouputs.csv
@@ -107,7 +107,7 @@ Then
 
 will be created. This csv file includes the value of CDF value for each node of the neural network and will be the input file for copula estimation.
 
-## <u>Estimate copulas and dump coeeficient correlation matrix</u> 
+## <u>4. Estimate copulas and dump coeeficient correlation matrix</u> 
 In this procedure, the program estimates pair-copulas for the each nodes in the neural network. Then, we consider the Kendall's tau for each pair-copulas as the coefficient correlation.
 To estimate the copula, this package using noble library [vinecopulib](https://github.com/vinecopulib/vinecopulib). 
 
@@ -130,7 +130,7 @@ Then you can obtaine the output *iris_CM.csv*.
 This file contains a table of Kendall's tau for each pair-copulas and we treat this table as coeficient correlation matrix between the  
 of the nodes in the trained neural network. In the next step, we analyze this correlation matrix.
 
-## <u>5.Analyzie the correlation matrix</u>
+## <u>5. Analyzie the correlation matrix</u>
 The following two files are sub moduled called from main analysis script.
 + NodeStructure.py
 + NNCorrelationMatrix.py
