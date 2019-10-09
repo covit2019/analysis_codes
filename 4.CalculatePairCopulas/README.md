@@ -1,8 +1,3 @@
-# ChangeLog
-
-### 2019/09/18
-+ First commit
-
 # About 
 This package is a driver code for the
 + vinecopulib : https://github.com/vinecopulib/vinecopulib  
@@ -61,7 +56,7 @@ brew install eigen
 
 ## 2. compile this packages it self
 ```
- cd xxxxxxxxx/cmd
+ cd 4.CalculatePairCopulas/cmd
  make
 ```
 then executable binary is created under ./exe directory
